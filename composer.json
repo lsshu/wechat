@@ -1,0 +1,32 @@
+{
+    "name": "lsshu/wechat",
+    "description": "api",
+    "type": "library",
+    "keywords": ["lsshu","laravel", "wechat","wx","account","program","message"],
+    "homepage": "https://github.com/lsshu/wechat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lsshu",
+            "email": "admin@lsshu.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Lsshu\\Wechat\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lsshu\\Wechat\\ServiceProvider"
+            ]
+        }
+    }
+}
