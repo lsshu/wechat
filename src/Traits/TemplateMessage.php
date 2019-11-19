@@ -78,10 +78,10 @@ trait TemplateMessage
      * @param null $miniprogram 跳小程序所需数据，不需跳小程序可不用传该数据 ['appid'=>"","pagepath"=>""]
      * @return mixed
      */
-    public function message($touser,$template_id,$data,$redirect_url=null,$color=null,$miniprogram=null)
+    public function sendTemplateMessage($touser,$template_id,$data,$url=null,$color=null,$miniprogram=null)
     {
         $accessToken = $this->getAccessToken();
-        $url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' . $accessToken;
-        return $this->httpPost($url,compact('touser','template_id','data','redirect_url','miniprogram','color'));
+        $request_url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' . $accessToken;
+        return $this->httpPost($request_url,json_encode(compact('touser','template_id','data','url','miniprogram','color')));
     }
 }
