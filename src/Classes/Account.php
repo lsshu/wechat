@@ -10,9 +10,11 @@ namespace Lsshu\Wechat\Classes;
 
 
 use Lsshu\Wechat\Interfaces\BaseInterface;
+use Lsshu\Wechat\Traits\TemplateMessage;
 
 class Account extends BaseClass implements BaseInterface
 {
+    use TemplateMessage; //使用模板通知
     protected static $instance;     //对象实例
     protected $jsapiTicketCache = true; // jsapi_ticket 缓存
 
